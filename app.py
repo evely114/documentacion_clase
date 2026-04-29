@@ -6,6 +6,7 @@ App de Streamlit para explorar visualmente cualquier CSV.
 
 import pandas as pd
 import streamlit as st
+import plotly.express as px
 
 
 # 1. CONFIGURACIÓN DE LA PÁGINA
@@ -76,3 +77,25 @@ elif tipo_grafico == 'Frecuencia de una variable categórica' and columnas_categ
     st.bar_chart(df[columna].value_counts())
 else:
     st.warning('No hay columnas de ese tipo en el dataset.')
+
+
+# 7. GRÁFICO DE DISPERSIÓN
+st.subheader('📉 Gráfico de dispersión')
+if len(columnas_numericas) >= 2:
+    x_axis = st.selectbox('Selecciona el eje X', columnas_numericas, key='scatter_x')
+    y_axis = st.selectbox('Selecciona el eje Y', columnas_numericas, key='scatter_y')
+    st.write(f'Dispersión entre {x_axis} y {y_axis}')
+    st.plotly_chart(
+        px.scatter(df, x=x_axis, y=y_axis, title=f'Dispersión: {x_axis} vs {y_axis}')
+    )
+else:
+    st.warning('Se necesitan al menos dos columnas numéricas para generar un gráfico de dispersión.')
+
+
+# 8. GRÁFICO DE LÍNEAS
+st.subheader('📉 Gráfico de líneas')
+if columnas_numericas:
+    linea_columna = st.selectbox('Selecciona una columna para el gráfico de líneas', columnas_numericas, key='line_chart')
+    st.line_chart(df[linea_columna])
+else:
+    st.warning('No hay columnas numéricas disponibles para generar un gráfico de líneas.')

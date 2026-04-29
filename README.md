@@ -1,74 +1,117 @@
-🔍 Mini Data Explorer
-Aplicación web interactiva construida con Streamlit para explorar y visualizar cualquier archivo CSV de forma rápida y sencilla.
+# Mini Data Explorer
 
-✨ Características
+Mini Data Explorer es una aplicación web interactiva desarrollada con Streamlit, diseñada para explorar y visualizar archivos CSV de manera rápida y eficiente.
 
-📂 Carga de datos flexible — sube tu propio CSV o usa el dataset de ejemplo incluido
-📏 Métricas instantáneas — filas, columnas y valores nulos a golpe de vista
-👀 Vista previa — muestra las primeras 10 filas del dataset
-📊 Estadísticas descriptivas — media, desviación estándar, cuartiles y más
-📈 Gráficos interactivos — distribución de variables numéricas y frecuencia de variables categóricas
+---
 
+## ✨ Características principales
 
-🚀 Instalación y uso
-1. Clona el repositorio
-bashgit clone https://github.com/tu-usuario/mini-data-explorer.git
-cd mini-data-explorer
-2. Instala las dependencias
-bashpip install -r requirements.txt
-3. Ejecuta la aplicación
-bashstreamlit run app.py
-La app se abrirá automáticamente en tu navegador en http://localhost:8501.
+- **Carga de datos flexible**: Permite subir archivos CSV personalizados o utilizar el dataset de ejemplo incluido.
+- **Métricas instantáneas**: Visualiza rápidamente el número de filas, columnas y valores nulos.
+- **Vista previa de datos**: Muestra las primeras 10 filas del dataset cargado.
+- **Estadísticas descriptivas**: Calcula métricas como media, desviación estándar, cuartiles, entre otras.
+- **Gráficos interactivos**: Genera visualizaciones dinámicas para analizar distribuciones y frecuencias.
 
-📦 Dependencias
-PaqueteVersión mínimaDescripciónstreamlit1.28+Framework de la aplicación webpandas2.0+Carga y manipulación de datos
-Instálalas todas de una vez:
-bashpip install streamlit pandas
+---
 
-📁 Estructura del proyecto
-mini-data-explorer/
+## 🚀 Guía de instalación y uso
+
+### 1. Clonar el repositorio
+Para comenzar, clona este repositorio en tu máquina local:
+```bash
+git clone https://github.com/evely114/documentacion_clase.git
+cd documentacion_clase
+```
+
+### 2. Instalar dependencias
+Asegúrate de tener Python instalado y ejecuta el siguiente comando para instalar las dependencias necesarias:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Ejecutar la aplicación
+Inicia la aplicación con el siguiente comando:
+```bash
+streamlit run app.py
+```
+La aplicación se abrirá automáticamente en tu navegador en [http://localhost:8501](http://localhost:8501).
+
+---
+
+## 📦 Dependencias
+
+| Paquete   | Versión mínima | Descripción                       |
+|-----------|----------------|-----------------------------------|
+| streamlit | 1.28+          | Framework para el desarrollo de aplicaciones web interactivas. |
+| pandas    | 2.0+           | Biblioteca para la manipulación y análisis de datos.          |
+
+Instala todas las dependencias con:
+```bash
+pip install streamlit pandas
+```
+
+---
+
+## 📁 Estructura del proyecto
+
+La estructura del proyecto es la siguiente:
+```
+documentacion_clase/
 ├── app.py          # Código principal de la aplicación
 ├── datos.csv       # Dataset de ejemplo (usado si no se sube ningún archivo)
 ├── requirements.txt
 └── README.md
+```
 
-🖥️ Cómo usar la aplicación
-Cargar datos
+---
 
-CSV propio — usa el botón "Sube tu CSV" en la barra lateral izquierda
-Dataset de ejemplo — si no subes nada, se carga datos.csv automáticamente
+## 🖥️ Uso de la aplicación
 
-Explorar el dataset
-Una vez cargados los datos, la app muestra tres secciones principales:
+### Carga de datos
 
-Métricas — número de filas, columnas y valores nulos totales
-Vista previa — tabla con las primeras 10 filas
-Estadísticas descriptivas — tabla con df.describe() para todas las columnas numéricas
+- **Archivo CSV personalizado**: Utiliza el botón "Sube tu CSV" en la barra lateral izquierda para cargar tu propio archivo.
+- **Dataset de ejemplo**: Si no se sube ningún archivo, se cargará automáticamente el archivo `datos.csv` incluido en el proyecto.
 
-Gráfico interactivo
-Selecciona el tipo de visualización desde el selector:
+### Exploración del dataset
 
-Distribución de una variable numérica — elige una columna numérica y verás un gráfico de barras con sus valores
-Frecuencia de una variable categórica — elige una columna de texto y verás un gráfico con el conteo de cada categoría
+La aplicación proporciona las siguientes funcionalidades:
 
+1. **Métricas generales**: Número total de filas, columnas y valores nulos.
+2. **Vista previa**: Tabla con las primeras 10 filas del dataset.
+3. **Estadísticas descriptivas**: Resumen estadístico de las columnas numéricas utilizando `df.describe()`.
 
-⚙️ Configuración
-La página se configura con los siguientes parámetros de Streamlit:
-pythonst.set_page_config(
-    page_title='Mini Data Explorer',
-    page_icon='🔍',
-    layout='wide',
-)
-Para cambiar el dataset de ejemplo, reemplaza el archivo datos.csv en la raíz del proyecto manteniendo el mismo nombre.
+### Visualizaciones interactivas
+Selecciona el tipo de gráfico deseado desde el menú desplegable en la barra lateral para analizar los datos de manera visual.
 
-🤝 Contribuir
+---
 
-Haz un fork del repositorio
-Crea una rama para tu feature (git checkout -b feature/nueva-funcionalidad)
-Haz commit de tus cambios (git commit -m 'Añade nueva funcionalidad')
-Haz push a la rama (git push origin feature/nueva-funcionalidad)
-Abre un Pull Request
+## 🛠️ Contribuciones
 
+Contribuciones son bienvenidas. Sigue estos pasos para colaborar:
 
-📄 Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
+1. Realiza un fork del repositorio.
+2. Crea una nueva rama para tu funcionalidad o corrección de errores:
+   ```bash
+   git checkout -b mi-nueva-funcionalidad
+   ```
+3. Realiza tus cambios y crea un commit descriptivo:
+   ```bash
+   git commit -m "Agrega nueva funcionalidad"
+   ```
+4. Sube tus cambios a tu repositorio fork:
+   ```bash
+   git push origin mi-nueva-funcionalidad
+   ```
+5. Abre un Pull Request en GitHub y describe tus cambios.
+
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo los términos de la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más información.
+
+---
+
+## 📞 Contacto
+
+Si tienes preguntas o sugerencias, no dudes en ponerte en contacto con el propietario del repositorio a través de [GitHub](https://github.com/evely114).
